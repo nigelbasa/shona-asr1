@@ -111,10 +111,14 @@ only, used for shallow fusion in `beam_decode`, not part of the acoustic path.
 
 ## Running
 
-```bash
+One command per line - Windows PowerShell 5.1 has no `&&`:
+
+```
 pip install -r requirements.txt
-python scripts/download.py && python scripts/extract.py
-python scripts/prepare.py && python scripts/speaker_split.py
+python scripts/download.py
+python scripts/extract.py
+python scripts/prepare.py
+python scripts/speaker_split.py
 ```
 
 Protocol A:

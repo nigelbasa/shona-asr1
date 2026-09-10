@@ -40,13 +40,19 @@ print(DRIVE)"""),
 
 md("""## 3. Get the code
 
-Push the project from your laptop once:
+Push the project from your laptop once. On Windows run these one per line -
+PowerShell 5.1 has no `&&`, so chaining them is a parser error:
 
-```bash
-cd /c/Users/User/mydev/shona-asr1
-git init && git add -A && git commit -m "Waxal sna pipeline + CNN-CTC model"
+```
+cd C:\\Users\\User\\mydev\\shona-asr1
+git init
+git add -A
+git commit -m "Waxal sna pipeline + CNN-CTC model"
 gh repo create shona-asr1 --private --source=. --push
 ```
+
+`git init`, `add` and `commit` have already been run locally, so in practice
+only the `gh repo create` line is left.
 
 `.gitignore` already excludes `data/` and `checkpoints/`, so this pushes code and
 manifests (a few MB) - not the 5 GB of audio.
